@@ -15,7 +15,7 @@ function App() {
     fetch("http://localhost:3001/toys")
       .then((r) => r.json())
       .then((data) => setToys(data))
-  })
+  }, [])
 
   function addNewToy(newToy){
     setToys([...toys, newToy])
