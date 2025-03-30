@@ -18,9 +18,14 @@ function App() {
   })
 
   function addNewToy(newToy){
-    console.log("new toy", newToy)
     setToys([...toys, newToy])
   }
+
+  function deleteToy(deletedToyId){
+    const updatedToys = toys.filter((toy) => toy.id !== deletedToyId);
+    setToys(updatedToys)
+  }
+
 
   return (
     <>
@@ -29,7 +34,7 @@ function App() {
       <div className="buttonContainer">
         <button onClick={handleClick}>Add a Toy</button>
       </div>
-      <ToyContainer toys={toys} />
+      <ToyContainer toys={toys} handleDeleteToy={deleteToy} />
     </>
   );
 }

@@ -13,8 +13,8 @@ function ToyForm({onSubmitToy}) {
     });
   }
 
-  function handleSubmit(e) {
-    e.preventDefault();
+  function handleSubmit(event) {
+    event.preventDefault();
     fetch("http://localhost:3001/toys", {
       method: "POST",
       headers: {
